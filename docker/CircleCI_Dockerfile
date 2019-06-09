@@ -34,7 +34,7 @@ RUN bundle install
 
 COPY . /inbox
 
-EXPOSE 3001
+EXPOSE 3000
 
 COPY docker-entrypoint.sh /usr/local/bin
 

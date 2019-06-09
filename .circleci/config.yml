@@ -9,11 +9,11 @@ jobs:
       PROJECT_ID: microserviceevaluation
       CLUSTER_NAME: microservices
       CLOUDSDK_COMPUTE_ZONE: us-central1-a
-      CONTAINER_NAME: app-website
+      CONTAINER_NAME: app
       IMAGE: andre-leoni
-      REG_ID: app-website
+      REG_ID: app
       IMG_TAG: 0.1.0
-      PROJECT_NAME: app-website
+      PROJECT_NAME: app
       DEPLOYMENT_ENVIRONMENT: production
     steps:
       - checkout
