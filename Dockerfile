@@ -22,6 +22,8 @@ RUN bundle install
 
 COPY . /app
 
+RUN rake assets:precompile
+
 EXPOSE 3000
 
 COPY docker-entrypoint.sh /usr/local/bin

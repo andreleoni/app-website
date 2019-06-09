@@ -1,0 +1,41 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: app-v1
+  labels:
+    app: app
+    version: v1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: app
+        version: v1
+    spec:
+      containers:
+      - name: app
+        image: andreleoni/app-website:latest
+        args: ["rails s -p 3000 -b 0.0.0.0"]
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: RAILS_LOG_TO_STDOUT
+          value: "true"
+        - name: RAILS_SERVE_STATIC_FILES
+          value: "true"
+        - name: MESSAGES_MS_URL
+          value: inbox-ms:3001
+        - name: REDIS_URL
+          value: "redis"
+        - name: REDIS_PORT
+          value: "6379"
+        - name: RAILS_ENV
+          value: "production"
+        - name: SECRET_KEY_BASE
+          valueFrom:
+            secretKeyRef:
+              name: "secret-key-base"
+              key: "secret-key-base"
+        ports:
+        - containerPort: 3000
+---
