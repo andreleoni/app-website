@@ -10,4 +10,4 @@ fi
 # while ! nc -z redis 6379; do sleep 0.1; done
 # echo "Redis is up - execuring command"
 
-rails s -b 0.0.0.0 -p 3000
+rails s -b 0.0.0.0 -p 3002

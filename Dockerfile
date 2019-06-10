@@ -24,7 +24,7 @@ COPY . /app
 
 RUN rake assets:precompile
 
-EXPOSE 3000
+EXPOSE 3002
 
 COPY docker-entrypoint.sh /usr/local/bin
 

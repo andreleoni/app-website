@@ -33,9 +33,3 @@ RUN gem update bundle
 RUN bundle install
 
 COPY . /inbox
-
-EXPOSE 3000
-
-COPY docker-entrypoint.sh /usr/local/bin
-
-ENTRYPOINT ["docker-entrypoint.sh"]
