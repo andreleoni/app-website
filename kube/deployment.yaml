@@ -37,5 +37,5 @@ spec:
               name: "secret-key-base"
               key: "secret-key-base"
         ports:
-        - containerPort: 3000
+        - containerPort: 3002
 ---
